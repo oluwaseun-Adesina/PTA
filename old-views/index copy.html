@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="./js.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <title>Parent Teacheer Association conference Reg-For,</title>
+  </head>
+
+  <body>
+   <header>  <h1 class="header-text">PTA Registration Form</h1></header>
+    <div class="container form">
+      <form class="row g-3 needs-validation" novalidate action="./thanks.html">
+
+        <div id="student-field">
+
+        </div>
+
+        <h5 class="stn-name">Student Name</h5>
+
+        <div class="panel-body">
+
+          <div id="education_fields">
+      
+          </div>
+          
+          <div class="col-m">
+            <div class="form-group">
+              <input type="text" class="form-control" id="FirstName" name="FirstName[]" value="" placeholder="Enter Your First Name">
+            </div>
+          </div>
+          <div class="col-m">
+            <div class="form-group">
+              <input type="text" class="form-control" id="LastName" name="LastName[]" value="" placeholder="Enter Your Last Name">
+              <div class="input-group-btn">
+                <button class="btn btn-success" type="button" onclick="education_fields();"> <span
+                    class="glyphicon glyphicon-plus" aria-hidden="true"></span> </button>
+              </div>
+            </div>
+            <div class="form-group form-check">
+              <input type="radio" name="male" id="mail" class="form-check-input">
+              <label for="male" class="form-check-label"> Male</label>
+            </div>
+            <div class="form-group form-check">
+              <input type="radio" name="femail" id="female" class="form-check-input">
+              <label for="female" class="form-check-label"> Female</label>
+            </div>
+          </div>
+        </div>
+          <div class="clear"></div>
+      
+        </div>
+
+        <div class="clear"></div>
+
+        <h5 class="stn-name">Parent's Name</h5>
+        <div class="col-md-6">
+          <!-- <label for="validationCustom01" class="form-label">First name</label> -->
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom01"
+            placeholder="Enter First Name"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-6">
+          <!-- <label for="validationCustom02" class="form-label">Last name</label> -->
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom02"
+            placeholder="Enter Last Name"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="col-md-6">
+          <h5>Parent's Email</h5>
+
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="name@example.com"
+          />
+        </div>
+
+        <div class="col-md-6">
+          <h5>Parent's Phone</h5>
+
+          <input
+            type="tel"
+            class="form-control"
+            id="phone"
+            pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+          />
+        </div>
+        <h5>Address</h5>
+        <div class="col-md-6">
+          <h6>Street</h6>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom03"
+            required
+          />
+          <div class="invalid-feedback">Please provide a valid city.</div>
+        </div>
+        <div class="col-md-6">
+          <h6>State</h6>
+          <select class="form-select" id="validationCustom04" required>
+            <option selected disabled value="">Choose...</option>
+            <
+            <option value="Abuja FCT">Abuja FCT</option>
+            <option value="Abia">Abia</option>
+            <option value="Adamawa">Adamawa</option>
+            <option value="Akwa Ibom">Akwa Ibom</option>
+            <option value="Anambra">Anambra</option>
+            <option value="Bauchi">Bauchi</option>
+            <option value="Bayelsa">Bayelsa</option>
+            <option value="Benue">Benue</option>
+            <option value="Borno">Borno</option>
+            <option value="Cross River">Cross River</option>
+            <option value="Delta">Delta</option>
+            <option value="Ebonyi">Ebonyi</option>
+            <option value="Edo">Edo</option>
+            <option value="Ekiti">Ekiti</option>
+            <option value="Enugu">Enugu</option>
+            <option value="Gombe">Gombe</option>
+            <option value="Imo">Imo</option>
+            <option value="Jigawa">Jigawa</option>
+            <option value="Kaduna">Kaduna</option>
+            <option value="Kano">Kano</option>
+            <option value="Katsina">Katsina</option>
+            <option value="Kebbi">Kebbi</option>
+            <option value="Kogi">Kogi</option>
+            <option value="Kwara">Kwara</option>
+            <option value="Lagos">Lagos</option>
+            <option value="Nassarawa">Nassarawa</option>
+            <option value="Niger">Niger</option>
+            <option value="Ogun">Ogun</option>
+            <option value="Ondo">Ondo</option>
+            <option value="Osun">Osun</option>
+            <option value="Oyo">Oyo</option>
+            <option value="Plateau">Plateau</option>
+            <option value="Rivers">Rivers</option>
+            <option value="Sokoto">Sokoto</option>
+            <option value="Taraba">Taraba</option>
+            <option value="Yobe">Yobe</option>
+            <option value="Zamfara">Zamfara</option>
+            <option value="Outside Nigeria">Outside Nigeria</option>
+          </select>
+          <div class="invalid-feedback">Please select a valid state.</div>
+        </div>
+
+        <div class="col-md-12">
+          <textarea
+            class="form-control"
+            placeholder="Enter your Address here"
+            id="floatingTextarea"
+          ></textarea>
+        </div>
+
+        <h6>Please Select the topics you wish to discuss at the conference</h6>
+        <div class="form-check col-md-6">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="attendance"
+            id="flexCheckDefault"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            Attendance
+          </label>
+        </div>
+
+        <div class="form-check col-md-6">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="physical-activities"
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              Physical Activities
+            </label>
+          </div>
+
+          <div class="form-check col-md-6">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="class-participation"
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              Class Participation
+            </label>
+          </div>
+
+          <div class="form-check col-md-6">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="student-behaviour"
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              Student Behaviour
+            </label>
+          </div>
+
+          <div class="form-check col-md-6">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="after-school-programs"
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              After-school programs
+            </label>
+          </div>
+
+          <div class="form-check col-md-6">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="school-cleaning"
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              School cleaning
+            </label>
+          </div>
+
+          <div class="form-check col-md-6">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="creativity"
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              Creativity
+            </label>
+          </div>
+
+          <div class="form-check col-md-6">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="supportive-events"
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+             Supportive events
+            </label>
+          </div>
+
+          <div class="form-check col-md-6">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="teacher-behaviour"
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              Teacher behavior
+            </label>
+          </div>
+
+        
+
+          <div class="form-check col-md-6">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="transportation"
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              Transportation
+            </label>
+          </div>
+
+          <div class="form-check col-md-6">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="counseling"
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              Academic / Social counseling
+            </label>
+          </div>
+
+          <div class="form-check col-md-6">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value="other"
+              id="flexCheckDefault"
+            />
+            <label class="form-check-label" for="flexCheckDefault">
+              Others
+            </label>
+          </div>
+
+
+        <!-- <div class="col-12">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="invalidCheck"
+              required
+            />
+            <label class="form-check-label" for="invalidCheck">
+              Agree to terms and conditions
+            </label>
+            <div class="invalid-feedback">
+              You must agree before submitting.
+            </div>
+          </div>
+        </div> -->
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

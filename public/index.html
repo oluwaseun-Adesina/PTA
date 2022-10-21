@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homestyle.css">
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" /> -->
+    <title>Home</title>
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+     </div>
+
+     <form action="/reg-form.html">
+        <img src="./images/fa.png" alt="">
+        <h3>Enter Your Access Token Here</h3>
+
+        <label for="token" class="token">Access Token </label>
+        <input type="text" name="token" id="token" placeholder="Enter the access token here" required>
+        <!-- <input type="submit" class="btn btn-primary" value="Submit form" /> -->
+            
+        <button class="btn btn-primary" type="submit">GET IN</button>
+    </form>
+
+    <script>
+        const form = document.querySelector('form');
+        const token = document.querySelector('#token');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            if (token.value === '') {
+                alert('Please enter your access token');
+            }
+            else if(token.value !== 'abcd12466'){
+                alert('Invalid access token');
+            }
+            else{
+                alert('You have successfully logged in');
+                window.location.href = '/reg-form.html';
+            }
+            
+        });
+    </script>
+</body>
+</html>
