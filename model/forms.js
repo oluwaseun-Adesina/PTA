@@ -23,12 +23,16 @@ const formSchema = new Schema({
         required: true
     },
     parentPhone: {
-        type: String,
+        type: Number,
         required: true
     },
     state: {
         type: String,
         required: true
+    },
+    stateOutsideNigeria: {
+        type: String,
+        required: false
     },
     address: {
         type: String,

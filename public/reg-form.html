@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- CSS only -->
   <link rel="stylesheet" href="style.css" />
-  <script src="/js.js"></script>
 
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
   <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -25,7 +24,7 @@
 
 
   <div class="container form">
-    <form class="row g-3 needs-validation" novalidate action="/reg-form" method="post">
+    <form class="row g-3 needs-validation"  action="/reg-form" method="post">
       <svg xmlns="http://www.w3.org/2000/svg" style="display: none;" preserveAspectRatio="xMidYMid meet">
         <symbol id="info-fill" viewBox="0 0 16 16">
           <path
@@ -85,35 +84,10 @@
       </div>
 
 
-      <div class="col-md-6">
+      <div class="col-md-12">
         <h5>Relationship</h5>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="flexRadioDefault" id="father">
-          <label class="form-check-label" for="father">
-            Father
-          </label>
-        </div>
-
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="flexRadioDefault" value="" id="mother">
-          <label class="form-check-label" for="mother">
-            Mother
-          </label>
-        </div>
-
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="flexRadioDefault" value="" id="uncle">
-          <label class="form-check-label" for="uncle">
-            Uncle
-          </label>
-        </div>
-
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="flexRadioDefault" value="" id="aunty">
-          <label class="form-check-label" for="aunty">
-            Aunty
-          </label>
-        </div>
+        <textarea class="form-control" placeholder="relationship" id="relationship" style="height: 100px" required
+          name="comments"></textarea>
       </div>
 
       <h5>Address</h5>
@@ -160,6 +134,10 @@
           <option value="Zamfara">Zamfara</option>
           <option value="Outside Nigeria">Outside Nigeria</option>
         </select>
+        <br>
+        <textarea class="form-control" placeholder="Type in the state if it is outide Nigeria" id="stateOutsideNigeria" style="height: 100px" 
+          name="stateOutsideNigeria"></textarea>
+
       </div>
 
       <div class="col-md-12">
@@ -170,7 +148,7 @@
 
       <div class="form-floating">
         <h6>Comments</h6>
-        <textarea class="form-control" placeholder="Comments" id="comment" style="height: 100px"
+        <textarea class="form-control" placeholder="Comments" id="comment" style="height: 100px" required
           name="comments"></textarea>
       </div>
 
