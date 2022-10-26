@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard </title>
+</head>
+<body>
+
+    <header>
+        <div class="overlay head">
+            <img src="./images/fa.png" alt="">
+            <h1>Admin Dashboard</h1>
+            <img src="./images/cisco.jpeg" alt="">
+            <a href="/download" class="btn"> Download</a>
+        </div>
+    </header>
+
+
+    <table class="table table-hover table-fit">
+        <tr>
+            <th scope="col" class="fit">S/N</th>
+            <th scope="col" class="fit">Student Name</th>
+            <th scope="col" class="fit">Parent Name</th>
+            <th scope="col" class="fit">Email</th>
+            <th scope="col" class="fit">Phone</th>
+            <th scope="col" class="fit">Address</th>
+            <th scope="col" class="fit">Comments</th>
+        </tr>
+
+        <% if(forms.length > 0){ %> 
+            <% let number = 1 %>
+            <% forms.forEach(function(form){ %>
+                <tr>
+                     
+                    <td class="fit"><%= number++ %></td>
+                    <td class="fit"><%= form.firstName + " " + form.lastName %></td>
+                    <td class="fit"><%= form.parentFirstName + " " + form.parentLastName%></td>
+             
+                    <td class="fit"><%= form.parentEmail %></td>
+                    <td class="fit"><%= form.parentPhone %></td>
+                    <td class="fit"><%= form.address %></td>
+                    <td ><%= form.comments %></td>
+                </tr>
+            <% }) %>
+        <% } %>
+
+     
+    </table>
+
+    <div class="btn-container">
+        <button class="cta" >
+            <span> <a href="index.html" method="get">  Go back to Home</a> </span>
+            <svg viewBox="0 0 13 10" height="10px" width="15px">
+              <path d="M1,5 L11,5"></path>
+              <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+        </button>
+    </div>
+
+    <footer>
+
+        &#169; Powered by <a href="#">CISCO UNITIES</a>
+
+    </footer>
+</body>
+</html>

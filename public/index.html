@@ -36,12 +36,17 @@
             if (token.value === '') {
                 alert('Please enter your access token');
             }
-            else if(token.value !== 'abcd12466'){
-                alert('Invalid access token');
-            }
-            else{
+            else if(token.value == 'abcd12466'){
                 alert('You have successfully logged in');
                 window.location.href = '/reg-form.html';
+
+            }else if(token.value === 'admin138dd38'){
+                alert('Admin Access granted');
+                window.location.href = '/dashboard';
+            }
+            else{
+                
+                alert('Invalid access token')
             }
             
         });

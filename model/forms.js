@@ -20,6 +20,7 @@ const formSchema = new Schema({
     },
     parentEmail: {
         type: String,
+        unique: true,
         required: true
     },
     parentPhone: {

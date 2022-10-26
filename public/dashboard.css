@@ -1,0 +1,148 @@
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+.head img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* table.table-fit {
+    width: auto !important;
+    table-layout: auto !important;
+}
+table.table-fit thead th, table.table-fit tfoot th {
+    width: auto !important;
+}
+table.table-fit tbody td, table.table-fit tfoot td {
+    width: auto !important;
+} */
+
+.table td.fit, 
+.table th.fit {
+    white-space: nowrap;
+    width: 1%;
+}
+.btn {
+  text-transform: uppercase;
+  color: rgb(124, 73, 73);
+  border: 2px solid #cb134e;
+  /* display: inline-block; */
+  padding: 15px;
+  padding-right: 50px;
+  padding-left: 50px;
+  border-radius: 3px;
+  cursor: pointer;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.btn:before {
+  width: 0%;
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  height: 5px;
+  background-color: #cb134e;
+  content: "";
+}
+.btn:after {
+  width: 100%;
+  height: 0%;
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  background-color: #cb134e;
+  content: "Download complete";
+  overflow: hidden;
+  text-align: center;
+  line-height: 180px;
+}
+.btn:hover {
+  background-color: #cb134e;
+  color: #060e33;
+}
+
+
+.cta {
+  position: relative;
+  margin: auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  align-items: center;
+ }
+ 
+ .cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #b1dae7;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+ }
+ 
+ .cta span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #234567;
+ }
+ 
+ .cta svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+ }
+ 
+ .cta:hover:before {
+  width: 100%;
+  background: #b1dae7;
+ }
+ 
+ .cta:hover svg {
+  transform: translateX(0);
+ }
+ 
+ .cta:active {
+  transform: scale(0.95);
+ }
+
+
+footer {
+  background-color: #060e33;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+  text-decoration: none;
+}
+footer a {
+  color: #fff;
+  text-decoration: none;
+}   
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}

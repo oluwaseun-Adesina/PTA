@@ -7,10 +7,34 @@ const ejs = require('ejs')
 require('dotenv').config()
 const Form = require('./model/forms')
 const app = express()
+const { Parser } = require('json2csv')
 
+
+//environment variables
 let port = process.env.PORT || 3000
-
 const dburi = process.env.db_URI
+
+
+//download csv file
+app.get('/download', (req, res) => {
+    Form.find({}, (err, data) => {
+        if (err) {
+            console.log(err)
+        } else {
+            const fields = ['firstName', 'lastName', 'parentFirstName', 'parentLastName', 'parentEmail', 'parentPhone', 'state', 'stateOutsideNigeria', 'address', 'comments', 'date']
+            const opts = { fields }
+            try {
+                const parser = new Parser(opts)
+                const csv = parser.parse(data)
+                res.attachment('data.csv')
+                res.status(200).send(csv)
+            } catch (err) {
+                console.error(err)
+            }
+        }
+    })
+})
+
 
 //view engine
 app.set('view engine', 'ejs')
@@ -62,25 +86,57 @@ app.post('/reg-form',(req, res)=>{
         comments
     }
 
-    const newForm = new Form(data)
-    newForm.save()
-    .then(()=>{
-        res.sendFile(__dirname + '/public/success.html')
-    })
-    .catch((err) => console.log(err))
-    
-    // Form.create(data)
-    // .then(()=>{
-    //     console.log(data)
-    //     res.sendFile(__dirname + '/public/success.html')
-    // })
-    // .catch((err) => console.log(err))
 
+    Form.findOne({parentEmail: parentEmail})
+    .then((result)=>{
+        if(result == null){
+            const form = new Form(data)
+            form.save()
+            .then((result)=>{
+                res.sendFile(__dirname + '/public/success.html')
+            })
+            .catch((err)=>{
+                console.log(err)
+            })
+        }else if(result == parentEmail && Form.date !== Date.now){
+            const form = new Form(data)
+            form.save()
+            .then((result)=>{
+                res.sendFile(__dirname + '/public/success.html')
+            })
+            .catch((err)=>{
+                console.log(err)
+            })
+        }
+        else {
+            res.sendFile(__dirname + '/public/already.html')
+        }
+    })
+    .catch((err)=>{ 
+        console.log(err)
+    }
+    )
 
 
 })
 
-  
-// app.listen(port, () => {
-//     console.log(`Server started on port ${port}`)
-// })
+app.get('/dashboard', (req, res)=>{
+    Form.find().sort({createdAt: -1})
+    .then((result)=>{
+        res.render('dashboard', {forms: result})
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+})
+
+
+app.get('download', (req, res)=>{
+    Form.find().sort({createdAt: -1})
+    .then((result)=>{
+        res.render('dashboard', {forms: result})
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+})
