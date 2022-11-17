@@ -12,7 +12,7 @@ const { Parser } = require('json2csv')
 
 //environment variables
 let port = process.env.PORT || 3000
-const dburi = process.env.db_URI
+const dburi = process.env.dbURI
 
 
 //download csv file
@@ -48,7 +48,7 @@ app.use(morgan('dev'))
 
 
 //database connection   
-mongoose.connect('mongodb://127.0.0.1:27017/parents', {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(dburi, {useNewUrlParser: true, useUnifiedTopology: true})
 .then(()=>{
     console.log('connected to db')
     app.listen(port, ()=>{
@@ -56,7 +56,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/parents', {useNewUrlParser: true, us
     })
 })
 .catch((err) => console.log(err))
-
+ 
 //routes
 app.get('/',(req, res) =>{
     res.sendFile(__dirname + '/index.html')
